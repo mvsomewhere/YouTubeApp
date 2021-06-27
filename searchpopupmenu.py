@@ -8,6 +8,8 @@ import certifi
 class SearchPopupMenu (MDInputDialog):
     title = 'Where do you want to go?'
     text_button_ok = 'ok'
+
+
     def __init__(self):
         super().__init__()
         self.size_hint=[.9,.3]
