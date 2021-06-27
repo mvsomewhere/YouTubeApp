@@ -2,6 +2,8 @@ from kivymd.uix.dialog import MDInputDialog
 from urllib import parse
 from kivy.network.urlrequest  import UrlRequest
 from kivy.app import App
+from kivy.clock import Clock
+import certifi
 
 class SearchPopupMenu (MDInputDialog):
     title = 'Where do you want to go?'
@@ -12,6 +14,9 @@ class SearchPopupMenu (MDInputDialog):
         self.background_color=(163/255, 199/255, 98/255, 1)
         self.events_callback=self.callback
 
+    def open(self):#rewriting main kivymd function
+        super().open()
+        Clock.schedule_once(self.set_field_focus, 0.5)
 
 
     def callback(self, *args):
@@ -25,7 +30,7 @@ class SearchPopupMenu (MDInputDialog):
         address = parse.quote(address)
 
         url = "https://geocoder.ls.hereapi.com/6.2/geocode.json?searchtext=%s&apiKey=%s"%(address, app_code)
-        UrlRequest(url, on_success=self.success, on_failure = self.failure, on_error=self.error )
+        UrlRequest(url, on_success=self.success, on_failure = self.failure, on_error=self.error, ca_file=certifi.where() )
 
     def success(self, urlrequest, result):
         print(result)
