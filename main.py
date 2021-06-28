@@ -2,10 +2,11 @@ import sqlite3
 from kivymd.app import MDApp
 from farmersmapview import FarmersMapView
 from searchpopupmenu import SearchPopupMenu
-import bugs
+
 
 
 class MainApp(MDApp):
+
 
     connection = None
     cursor = None
@@ -25,7 +26,6 @@ class MainApp(MDApp):
         #instantiate SearchPopupMenu
         self.search_menu = SearchPopupMenu()
 
-bugs.fixBugs()
 
 MainApp().run()
 

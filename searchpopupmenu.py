@@ -34,13 +34,17 @@ class SearchPopupMenu (MDInputDialog):
         url = "https://geocoder.ls.hereapi.com/6.2/geocode.json?searchtext=%s&apiKey=%s"%(address, app_code)
         UrlRequest(url, on_success=self.success, on_failure = self.failure, on_error=self.error, ca_file=certifi.where() )
 
+    def success_run(self, Latitude, Longitude):
+        app = App.get_running_app()
+        mapview= app.root.ids.mapview
+        mapview.center_on(Latitude, Longitude)
+
+
     def success(self, urlrequest, result):
         print(result)
         Latitude = (result['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']['Latitude'])
         Longitude = (result['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']['Longitude'])
-        app = App.get_running_app()
-        mapview= app.root.ids.mapview
-        mapview.center_on(Latitude, Longitude)
+        self.success_run(Latitude, Longitude)
         #print(Latitude,'   ', Longitude)
         print('success')
 
