@@ -2,6 +2,9 @@ import sqlite3
 from kivymd.app import MDApp
 from farmersmapview import FarmersMapView
 from searchpopupmenu import SearchPopupMenu
+import certifi
+import os
+os.environ['SSL_CERT_FILE'] = certifi.where()
 
 
 

@@ -1,5 +1,6 @@
 from kivymd.uix.dialog import ListMDDialog
 
+
 class LocationPopupMenu(ListMDDialog):
 
     def __init__(self, market_data):

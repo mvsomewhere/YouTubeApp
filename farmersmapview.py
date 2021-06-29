@@ -2,6 +2,8 @@ from kivy_garden.mapview import MapView
 from kivy.clock import Clock
 from kivy.app import App
 from marketmarker import MarketMarker
+
+
 image="marker1.png"#marker image
 
 class FarmersMapView(MapView):

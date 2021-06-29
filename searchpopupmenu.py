@@ -5,6 +5,7 @@ from kivy.app import App
 from kivy.clock import Clock
 import certifi
 
+
 class SearchPopupMenu (MDInputDialog):
     title = 'Where do you want to go?'
     text_button_ok = 'ok'
