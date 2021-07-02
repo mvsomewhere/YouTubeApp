@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = MarketFinder
+title = YouTubeApp
 
 # (str) Package name
-package.name = YTApp
+package.name = YouTubeApp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.wiseplat
