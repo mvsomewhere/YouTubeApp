@@ -29,5 +29,5 @@ install:
   - ls -l
   - ls bin/ -l
   - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/YouTubeApp-0.1-armeabi-v7a-debug.apk" --tag_name "v.0.1"
+  - dpl releases --token $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 --file "bin/YouTubeApp-0.1-armeabi-v7a-debug.apk" --tag_name "v.0.1"
   - echo "TODO COMPILE 64bit"
