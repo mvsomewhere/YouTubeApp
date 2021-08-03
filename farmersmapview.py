@@ -41,7 +41,7 @@ class FarmersMapView(MapView):
         # create MarketMarker
         lat, lon = market[21], market[20]#each market is a list of info where lat located at index 21 and lon at index 20
         marker = MarketMarker(lat=lat, lon=lon, source=image)
-        marker.size=(35,35)
+        marker.size=(55,55)
 
         marker.market_data=market#wtf is going on here
 
