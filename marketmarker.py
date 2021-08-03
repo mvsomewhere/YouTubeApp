@@ -3,7 +3,7 @@ from locationpopupmenu import LocationPopupMenu
 
 
 class MarketMarker(MapMarkerPopup):
-    selfsize=[35,35]
+    selfsize=[55,55]
     market_data=[]
 
     def on_release(self):
